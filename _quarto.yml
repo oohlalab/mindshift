@@ -1,0 +1,52 @@
+project:
+  render:
+    - "*.qmd"
+    - "!dev/"
+  type: website
+  output-dir: _site
+  preview:
+    port: 4000
+
+format:
+  html:
+    theme: journal
+    smooth-scroll: true
+    link-external-icon: true
+    link-external-newwindow: true
+    embed-resources: true
+    css: [style/main.css, style/clean-link.css, style/search.css]
+    toc: false
+    toc-title: Contents
+    html-math-method: katex
+
+lightbox: true
+
+website:
+  title: "OohLaLab Cognition"
+  page-navigation: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - sidebar:learn
+  sidebar:
+    - id: learn
+      title: "Learn"
+      style: "docked"
+      collapse-level: 1
+      href: learn/index.qmd
+      contents:
+        - href: learn/index.qmd
+          text: "Introduction"
+        - text: "---"
+        - section: "Descriptive Statistics"
+          contents:
+            - href: learn/descriptive-statistics/average-median-and-mode.qmd
+              text: Average, median and mode
+            - href: learn/descriptive-statistics/standard-error-and-variance.qmd
+              text: Standard error and variance
+        - text: "---"
+        - section: "Preparing and exploring data"
+          contents:
+            - href: learn/preparing-and-exploring-data/index.qmd
+              text: Get started
